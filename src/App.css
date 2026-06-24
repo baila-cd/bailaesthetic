@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+:root {
+  --SHADOW: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- BODY AND NAV ------------------- */
+
+body {
+  color: white;
+  background-color: #1b1b1b;
+  font-family: "Raleway", Open Sans;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 10px;
+  background-color: lightgray;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000000000;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+/* ---------------- FEATURED ------------------- */
+
+.featuredDiv {
+  background-color: grey;
+}
+
+.featuredDiv:hover {
+  text-decoration: underline;
+}
+
+.featuredDiv h1 {
+  font-size: 3rem;
+  padding-top: 0.75rem;
+}
+
+.featuredDiv li {
+  list-style-type: none;
+  padding: 1rem 1rem 2.5rem 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.featuredDiv img {
+  display: block;
+  box-shadow: var(--SHADOW);
+  max-width: 90vw;
+  margin-right: 1rem;
+}
+
+.featuredDiv .p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 80ch;
+}
+
+.featuredDiv p:first-child {
+  font-size: 2rem;
+}
+
+/* ---------------- RANDOM BUTTON ------------------- */
+
+.randomButton,
+.allArticlesButton {
+  height: 100px;
+  width: 100%;
+  background-repeat: repeat;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.randomButton {
+  background-image: url(https://64.media.tumblr.com/fec5db3e7a6319491720384745c486e5/tumblr_pb99jmbLGs1v4hlcio4_500.jpg);
+  background-position: center;
+  color: white;
+}
+
+.randomButton:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- CAROUSEL ------------------- */
+
+.carousel-div h1 {
+  margin: 1.25rem 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+}
+
+.Music {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/006/960/104/large_2x/modern-cartoon-illustration-with-music-note-on-dark-violet-background-seamless-pattern-for-decoration-design-fabric-packaging-hand-drawn-doodle-image-free-vector.jpg);
+}
+
+.Games {
+  background-image: url(https://img.freepik.com/fotos-premium/padrao-de-arte-de-linha-simples-com-elementos-de-videogame-em-fundo-azul-papel-de-parede-sem-costura-o-design-e-no-estilo-de-um-banner-de-conceito-de-videogames_1256366-7653.jpg?semt=ais_hybrid&w=740&q=80);
+}
+
+.Misc {
+  background-image: url(https://img.freepik.com/premium-vector/vibrant-liquid-purple-abstract-art-with-colorful-splashes-dynamic-background_470367-814.jpg);
+}
+
+.carousel-container ul {
+  width: 100%;
+  height: 250px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.carousel-container ul::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container li {
+  list-style-type: none;
+  flex: 0 0 165px;
+  height: 100%;
+  padding: 20px;
+  text-align: left;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.carousel-container li:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.carousel-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-p-container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding-top: 0.15rem;
+}
+
+.carousel-p-container p {
+  padding: 0.1rem;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ----------------- ALL ARTICLES BUTTON ------------------ */
+
+.allArticlesButton {
+  background-image: url(https://img.freepik.com/premium-photo/creative-educational-sketch-white-backdrop-with-copybooks-education-knowledge-concept-3d-rendering_670147-66821.jpg?semt=ais_hybrid&w=740&q=80);
+  color: black;
+}
+
+.allArticlesButton:hover {
+  text-decoration: underline;
+}
+
+/* ----------------- ARTICLE ------------------ */
+
+.cardDescription {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.innerImage {
+  min-width: 40vw;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: auto;
+}
+
+.image {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.headers {
+  margin: 1rem 0 2rem 0;
+}
+
+.headers h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.scrollable-content {
+  width: 90vw;
+}
+
+/* ----------------- ALL ARTICLES  ------------------ */
+
+.allH1 {
+  margin: 1rem 0;
+}
+
+.allDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.allLi {
+  list-style-type: none;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.allLi:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.allImg {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.all-p-container {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding-top: 0.15rem;
+}
+
+.all-p-container p {
+  padding: 0.1rem;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ----------------- MEDIA QUERIES ------------------ */
+
+@media only screen and (max-width: 750px) {
+  .featuredDiv li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .featuredDiv img {
+    margin: auto;
+  }
+
+  .p-container * {
+    margin-top: 1rem;
+  }
+
+  .allArticlesButton {
+    margin-bottom: 2rem;
+  }
+
+  .cardDescription {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileImage {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .text {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .scrollable-content {
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    padding: 0.5rem 0;
+    width: 40vw;
+  }
+
+  .mobileImage {
+    display: none;
+  }
+}
