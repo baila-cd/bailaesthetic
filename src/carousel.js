@@ -13,7 +13,7 @@ const Carousel = ({ categoryName, goToCardDescription }) => {
                 item.category === categoryName && item.status !== "featured"
             )
             .map((item) => (
-              <li key={item.id} onClick={() => goToCardDescription(item)}>
+              <li key={item.id} onClick={() => goToCardDescription(item)} style={{ fontFamily: item.font }}>
                 <img src={item.image} className="descriptionImg" />
                 <div className="carousel-p-container">
                   <p className="bold">{item.name}</p>

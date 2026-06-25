@@ -17,6 +17,7 @@ const All = () => {
             key={item.id}
             onClick={() => goToCardDescription(item)}
             className="allLi"
+            style={{ fontFamily: item.font }}
           >
             <img src={item.image} className="allImg" />
             <div className="all-p-container">
